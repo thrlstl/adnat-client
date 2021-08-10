@@ -1,25 +1,12 @@
 import './App.css';
-import { useState } from 'react';
-import Login from './components/Login';
-import Signup from './components/Signup';
+import Auth from './components/Auth/Auth'
+import Header from './components/Header'
 
 function App() {
-
-  const [toggle, setToggle] = useState(true)
-
-  const renderLoginOrSignup = () => {
-    return toggle
-      ? <Login
-        toggle={toggle}
-        setToggle={setToggle} />
-      : <Signup
-        toggle={toggle}
-        setToggle={setToggle} />
-  }
-
   return (
     <div className="App">
-      {renderLoginOrSignup()}
+      <Header />
+      <Auth />
     </div>
   );
 }
