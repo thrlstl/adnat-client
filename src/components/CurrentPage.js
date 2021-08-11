@@ -1,4 +1,4 @@
-import { Switch, Route, Redirect } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 import AccountPage from './Pages/AccountPage';
 import HomePage from './Pages/HomePage';
 import OrganizationPage from './Pages/OrganizationPage';
