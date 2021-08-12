@@ -1,9 +1,15 @@
 import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { signupSuccess } from "../../Actions/auth";
+
 import validateSignup from "./validateSignup";
 import API from './API'
 const API_URL = API()
 
+
 const useSignup = () => {
+    
+    const dispatch = useDispatch()
 
     const [isSubmitting, setIsSubmitting] = useState(false)
     const [errors, setErrors] = useState({})
@@ -41,7 +47,7 @@ const useSignup = () => {
                 .then(result => {
                     result.error
                     ? setErrors(result.error)
-                    : console.log(result)
+                    : dispatch(signupSuccess(result))
                 })
         }
 
