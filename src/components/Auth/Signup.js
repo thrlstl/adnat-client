@@ -1,65 +1,51 @@
-import { useState, useEffect } from 'react'
+import useSignup from './useSignup';
+import ErrorMessage from './ErrorMessage';
 
 function Signup(props) {
 
+    const { errors, handleChange, handleSubmit } = useSignup()
     const toggle = props.toggle
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        password: '',
-        passwordConfirmation: '',
-        error: null
-    })
-
-    const handleChange = e => {
-        setFormData({...formData, [e.target.name]: e.target.value})
-    }
-
-    const renderErrorMessage = () => {
-        return formData.error
-        ? <p>{formData.error}</p>
-        : null
-    }
-
-    const handleSubmit = e => {
-        e.preventDefault()
-        if (formData.password !== formData.passwordConfirmation) {
-            setFormData({...formData, error: 'Passwords do not match.'})
-        }
-        console.log(formData)
-    }
 
     return (
         <>
-            {renderErrorMessage()}
+        <div>
             <form onSubmit={handleSubmit}>
-                <input 
+                    { errors.length && <ErrorMessage error={errors} /> }
+                <div>
+                <input
                     placeholder='Name' 
                     name='name' 
-                    onChange={handleChange}>
-                </input><br />
+                    onChange={handleChange}/>
+                </div>
+                    { errors.name && <ErrorMessage error={errors.name} /> }
+                <div>
                 <input 
-                    type='email'
-                    placeholder='Email' 
-                    name='email'
-                    onChange={handleChange}>
-                </input><br />
+                    placeholder='Email Address' 
+                    name='email_address'
+                    onChange={handleChange}/>
+                </div>
+                    { errors.email_address && <ErrorMessage error={errors.email_address} /> }
+                <div>
                 <input
                     type='password' 
                     placeholder='Password' 
                     name='password'
-                    onChange={handleChange}>
-                </input><br />
+                    onChange={handleChange}/>
+                </div>
+                    { errors.password && <ErrorMessage error={errors.password} /> }
+                <div>
                 <input
                     type='password' 
                     placeholder='Password Confirmation' 
                     name='passwordConfirmation'
-                    onChange={handleChange}>
-                </input><br />
+                    onChange={handleChange}/>
+                </div>
+                    { errors.passwordConfirmation && <ErrorMessage error={errors.passwordConfirmation} /> }
                 <input 
                     type="submit" 
                     value="Signup"/>
-            </form><br />
+            </form>
+        </div><br />
             <button onClick={() => props.setToggle(!toggle)}>Login</button>
         </>
     )
