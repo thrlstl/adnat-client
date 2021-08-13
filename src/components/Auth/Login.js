@@ -1,36 +1,30 @@
-import { useState } from 'react'
+import useLogin from './useLogin';
+import ErrorMessage from './ErrorMessage';
 
-function Login(props) {
+function Login({ toggle, setToggle }) {
 
-    const toggle = props.toggle
-    const [formData, setFormData] = useState({
-        username: '',
-        password: '',
-        error: null
-    })
-
-    const handleChange = e => {
-        setFormData({...formData, [e.target.name]: e.target.value})
-    }
+    const { error, handleChange, handleSubmit } = useLogin()
 
     return (
         <>
-            <form>
+        { error.length > 0 && <ErrorMessage error={error} /> }
+            <form onSubmit={handleSubmit}>
                 <input
-                    placeholder='Username'
-                    name='username'
-                    onChange={(e) => handleChange(e)}>
+                    placeholder='Email Address'
+                    name='email_address'
+                    onChange={handleChange}>
                 </input><br />
                 <input
+                    type='password' 
                     placeholder='Password'
                     name='password'
-                    onChange={(e) => handleChange(e)}>
+                    onChange={handleChange}>
                 </input><br />
                 <input
-                    type="submit"
-                    value="Login" />
+                    type='submit'
+                    value='Login' />
             </form><br />
-            <button onClick={() => props.setToggle(!toggle)}>Signup</button>
+            <button onClick={() => setToggle(!toggle)}>Signup</button>
         </>
     )
 }

@@ -1,10 +1,9 @@
 import useSignup from './useSignup';
 import ErrorMessage from './ErrorMessage';
 
-function Signup(props) {
+function Signup({ toggle, setToggle }) {
 
     const { errors, handleChange, handleSubmit } = useSignup()
-    const toggle = props.toggle
 
     return (
         <>
@@ -46,7 +45,7 @@ function Signup(props) {
                     value="Signup"/>
             </form>
         </div><br />
-            <button onClick={() => props.setToggle(!toggle)}>Login</button>
+            <button onClick={() => setToggle(!toggle)}>Login</button>
         </>
     )
 }

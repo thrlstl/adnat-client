@@ -10,7 +10,6 @@ const API_URL = API()
 const useSignup = () => {
     
     const dispatch = useDispatch()
-
     const [isSubmitting, setIsSubmitting] = useState(false)
     const [errors, setErrors] = useState({})
     const [values, setValues] = useState({
@@ -55,7 +54,7 @@ const useSignup = () => {
             createUser();
           }
 
-    }, [errors, isSubmitting, values])
+    }, [errors, isSubmitting, values, dispatch])
 
     return { values, errors, handleChange, handleSubmit }
 }
