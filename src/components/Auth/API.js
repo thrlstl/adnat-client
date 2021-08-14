@@ -7,7 +7,7 @@ export default function API() {
     const development = 'http://localhost:3000/'
     const production = 'https://adnat-api.herokuapp.com/'
 
-    return env === 'production'
+    return env === 'development'
     ? development
     : production
 }

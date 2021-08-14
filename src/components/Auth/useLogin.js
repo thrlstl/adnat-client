@@ -30,12 +30,15 @@ const useLogin = () => {
             },
             body: JSON.stringify(values)
         }
-        fetch(`${API_URL}auth`, reqObj)
+        fetch(`${API_URL}login`, reqObj)
         .then(resp => resp.json())
         .then(result => {
-            result.error
-            ? setError(result.error)
-            : dispatch(loginSuccess(result))
+            if (result.token) {
+                localStorage.setItem('token', result.token)
+                dispatch(loginSuccess(result.user))
+            } else if (result.error) {
+                setError(result.error)
+            }
         })
     }
 
