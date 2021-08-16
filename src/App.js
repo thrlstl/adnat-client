@@ -10,6 +10,7 @@ const API_URL = API()
 function App() {
 
   useEffect(() => {
+    console.log(API_URL)
     let JWT_TOKEN = localStorage.getItem('token')
     if (JWT_TOKEN) {
       fetch(`${API_URL}auto_login`, {
