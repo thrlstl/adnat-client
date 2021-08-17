@@ -1,4 +1,4 @@
-const authReducer = (state=false, action) => {
+const authReducer = (state={}, action) => {
     switch (action.type) {
         case 'UPDATE_AUTHENTICATION':
             return action.isAuthenticated
