@@ -1,4 +1,4 @@
-const tokenReducer = (state={}, action) => {
+const tokenReducer = (state=null, action) => {
     switch (action.type) {
         case 'LOGIN_SUCCESS':
             return action.token

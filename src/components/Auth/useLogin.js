@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { loginSuccess, updateAuthentication } from '../../Actions/auth'
-
 import API from './API'
 const API_URL = API()
 
@@ -43,7 +42,7 @@ const useLogin = () => {
         })
     }
 
-    return { error, handleChange, handleSubmit}
+    return { error, handleChange, handleSubmit }
 }
 
 export default useLogin;
