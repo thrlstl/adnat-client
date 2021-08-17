@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { loginSuccess } from '../../Actions/auth'
+import { loginSuccess, updateAuthentication } from '../../Actions/auth'
 
 import API from './API'
 const API_URL = API()
@@ -35,7 +35,8 @@ const useLogin = () => {
         .then(result => {
             if (result.token) {
                 localStorage.setItem('token', result.token)
-                dispatch(loginSuccess(result.user))
+                dispatch(loginSuccess(result))
+                dispatch(updateAuthentication(true))
             } else if (result.error) {
                 setError(result.error)
             }

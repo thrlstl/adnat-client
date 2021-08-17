@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { signupSuccess } from "../../Actions/auth";
+import { signupSuccess, updateAuthentication } from "../../Actions/auth";
 
 import validateSignup from "./validateSignup";
 import API from './API'
@@ -44,9 +44,13 @@ const useSignup = () => {
                 fetch(`${API_URL}users`, reqObj)
                 .then(resp => resp.json())
                 .then(result => {
-                    result.error
-                    ? setErrors(result.error)
-                    : dispatch(signupSuccess(result))
+                    if (result.token) {
+                        localStorage.setItem('token', result.token)
+                        dispatch(signupSuccess(result))
+                        dispatch(updateAuthentication(true))
+                    } else if (result.error) {
+                        setErrors(result.error)
+                    }
                 })
         }
 

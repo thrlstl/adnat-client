@@ -1,11 +1,7 @@
-const authReducer = (state = {}, action) => {
+const authReducer = (state = false, action) => {
     switch (action.type) {
-        case 'LOGIN_SUCCESS':
-            return action.user
-        case 'LOGOUT_SUCCESS':
-            return action.user
-        case 'SIGNUP_SUCCESS':
-            return action.user
+        case 'UPDATE_AUTHENTICATION':
+            return action.isAuthenticated
         default:
             return state
     }

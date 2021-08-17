@@ -1,8 +1,12 @@
 import { combineReducers } from "redux";
-import authReducer from './auth'
+import userReducer from "./user";
+import tokenReducer from './token'
+import authReducer from "./auth";
 
 const allReducers = combineReducers({
-    user: authReducer
+    user: userReducer,
+    token: tokenReducer,
+    isAuthenticated: authReducer
 })
 
 export default allReducers;
