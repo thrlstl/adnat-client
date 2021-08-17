@@ -15,11 +15,11 @@ const useAuthentication = () => {
             }
         })
         .then(resp => resp.json())
-        .then(result => {
-            if (result.error) {
-                console.log(result.error)
+        .then(({ user, error }) => {
+            if (error) {
+                window.alert(error)
             } else {
-                dispatch(loginSuccess(result))
+                dispatch(loginSuccess(user))
                 dispatch(updateAuthentication(true))
             }
         })
