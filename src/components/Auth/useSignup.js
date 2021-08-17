@@ -43,13 +43,13 @@ const useSignup = () => {
             }
                 fetch(`${API_URL}users`, reqObj)
                 .then(resp => resp.json())
-                .then(result => {
-                    if (result.token) {
-                        localStorage.setItem('token', result.token)
-                        dispatch(signupSuccess(result))
+                .then(({ user, token, error }) => {
+                    if (token) {
+                        localStorage.setItem('token', token)
+                        dispatch(signupSuccess(user))
                         dispatch(updateAuthentication(true))
-                    } else if (result.error) {
-                        setErrors(result.error)
+                    } else if (error) {
+                        setErrors(error)
                     }
                 })
         }

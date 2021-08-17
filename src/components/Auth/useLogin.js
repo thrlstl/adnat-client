@@ -31,13 +31,13 @@ const useLogin = () => {
         }
         fetch(`${API_URL}login`, reqObj)
         .then(resp => resp.json())
-        .then(result => {
-            if (result.token) {
-                localStorage.setItem('token', result.token)
-                dispatch(loginSuccess(result))
+        .then(({ user, token, error }) => {
+            if (token) {
+                localStorage.setItem('token', token)
+                dispatch(loginSuccess(user))
                 dispatch(updateAuthentication(true))
-            } else if (result.error) {
-                setError(result.error)
+            } else if (error) {
+                setError(error)
             }
         })
     }

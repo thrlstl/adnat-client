@@ -1,22 +1,20 @@
-export const loginSuccess = ({user, token}) => {
+export const loginSuccess = user => {
     return {
         type: 'LOGIN_SUCCESS',
-        user: user,
-        token: token
+        user: user
     }
 }
 
-export const signupSuccess = ({user, token}) => {
+export const signupSuccess = user => {
     return {
       type: 'SIGNUP_SUCCESS',
-      user: user,
-      token: token
+      user: user
     }
 }
 
-export const updateAuthentication = value => {
+export const updateAuthentication = isAuthenticated => {
   return {
     type: 'UPDATE_AUTHENTICATION',
-    isAuthenticated: value
+    isAuthenticated: isAuthenticated
   }
 }

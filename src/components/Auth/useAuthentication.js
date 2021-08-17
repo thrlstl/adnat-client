@@ -3,7 +3,7 @@ import { loginSuccess, updateAuthentication } from '../../Actions/auth'
 import API from '../Auth/API'
 const API_URL = API()
 
-const useAuthentication = JWT_TOKEN => {
+const useAuthentication = () => {
 
     const dispatch = useDispatch()
 
