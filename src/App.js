@@ -25,7 +25,7 @@ function App() {
       <Header />
           <Switch>
           <Route exact path='/auth' component={Auth} />
-          <ProtectedRoute path='/dashboard' component={Dashboard} />
+          <ProtectedRoute exact path='/dashboard' component={Dashboard} />
             <Route exact path="/">
                 <Redirect to="/dashboard" />
             </Route>
