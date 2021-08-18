@@ -1,6 +1,6 @@
 function Header() {
     return (
-        <h1 onClick={() => console.log('clicked')}>Adnat</h1>
+        <a href='/dashboard' className='header'>Adnat</a>
     )
 }
 

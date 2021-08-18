@@ -6,26 +6,26 @@ function Login({ toggle, setToggle }) {
     const { error, handleChange, handleSubmit } = useLogin()
 
     return (
-        <>
+        <div className='form-container'>
         { error.length > 0 && <ErrorMessage error={error} /> }
-            <form onSubmit={handleSubmit}>
+            <form className='form' onSubmit={handleSubmit}>
                 <input
                     placeholder='Email Address'
                     name='email_address'
                     onChange={handleChange}>
-                </input><br />
+                </input>
                 <input
                     type='password' 
                     placeholder='Password'
                     name='password'
                     onChange={handleChange}>
-                </input><br />
+                </input>
                 <input
                     type='submit'
                     value='Login' />
-            </form><br />
-            <button onClick={() => setToggle(!toggle)}>Signup</button>
-        </>
+            </form>
+            <button className='auth-toggle' onClick={() => setToggle(!toggle)}>Signup</button>
+        </div>
     )
 }
 

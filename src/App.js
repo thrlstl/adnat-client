@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { Route, Redirect, Switch } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import Auth from './components/Auth/Auth'
-import Dashboard from './components/Dashboard';
+import Dashboard from './components/Dashboard/Dashboard';
 import Header from './components/Header'
 import ProtectedRoute from './components/Auth/ProtectedRoute';
 import useAuthentication from './components/Auth/useAuthentication';

@@ -12,6 +12,14 @@ export const signupSuccess = user => {
     }
 }
 
+export const logoutSuccess = () => {
+  return {
+    type: 'LOGOUT_SUCCESS',
+    user: {}
+  }
+}
+
+
 export const updateAuthentication = isAuthenticated => {
   return {
     type: 'UPDATE_AUTHENTICATION',

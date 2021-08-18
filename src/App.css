@@ -1,7 +1,60 @@
 .App {
-  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 20px;
+  margin-left: 50px;
+  margin-top: 50px;
+  color: white;
+}
+
+.header {
+  color: #3895d3;
+  font-size: 45px;
+  font-weight: bold;
+}
+
+.form-container {
+  margin-top: 50px;
+  width: 100vw;
+}
+
+.form > input {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 25px;
+  font-weight: bold;
+  display: list-item;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.form > input[type="submit"] {
+  padding: 5px 10px 5px 10px;
+  font-weight: bold;
+}
+
+.auth-toggle {
+  font-style: italic;
+  font-family: "Courier New", Courier, monospace;
+  margin-top: 50px;
+  padding: 5px 10px 5px 10px;
 }
 
 .error-message {
-  color: red;
+  color: #ed4337;
+  font-weight: bold;
+}
+
+a[id="logout"],
+a[id="org-action"] {
+  color: black;
+  font-weight: bold;
+  font-style: italic;
+  background-color: white;
+}
+
+a[id="org-action"] {
+  margin-right: 10px;
+}
+
+h2[id="org-name"] {
+  margin-bottom: 0;
 }
