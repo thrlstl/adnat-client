@@ -1,11 +1,11 @@
 import { useDispatch } from 'react-redux'
 import { loginSuccess, updateAuthentication } from '../../Actions/auth'
-import API from '../Auth/API'
-const API_URL = API()
+import useAPI from '../Auth/API'
 
 const useAuthentication = () => {
 
     const dispatch = useDispatch()
+    const API_URL = useAPI()
 
     const authenticateUser = JWT_TOKEN => {
         fetch(`${API_URL}auto_login`, {

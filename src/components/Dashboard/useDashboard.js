@@ -1,12 +1,11 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { loadDashboard, loadSelectedOrg } from '../../Actions/dashboard'
-
-import API from '../Auth/API'
-const API_URL = API()
+import useAPI from '../Auth/API'
 
 const useDashboard = () => {
     
     const dispatch = useDispatch()
+    const API_URL = useAPI()
     const user = useSelector(state => state.user)
     
     const leaveOrg = org => {
@@ -25,6 +24,27 @@ const useDashboard = () => {
         fetchDashboardData()
     }
 
+    const joinOrg = org => {
+        const formData = {
+            user_id: user.id,
+            organization_id: org.id
+        }
+        const reqObj = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        }
+        fetch(`${API_URL}join`, reqObj)
+        .then(resp => resp.json())
+        .then(({success, error}) => {
+            success
+            ? fetchDashboardData()
+            : console.log(error)
+        })
+    }
+
     const selectOrg = org => {
         dispatch(loadSelectedOrg(org))
     }
@@ -38,7 +58,7 @@ const useDashboard = () => {
     }
 
 
-    return { selectOrg, leaveOrg, fetchDashboardData }
+    return { selectOrg, leaveOrg, joinOrg, fetchDashboardData }
 }
 
 export default useDashboard;

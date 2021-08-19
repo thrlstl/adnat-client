@@ -1,21 +1,18 @@
-import { useDispatch, useSelector } from 'react-redux'
-import { logoutSuccess } from '../../Actions/auth'
+import { useSelector } from 'react-redux'
+// import Container from '../Container'
+import { default as UserStatusContainer } from '../Container'
+import useLogin from '../Auth/useLogin'
 
 function UserStatus() {
 
     const { name } = useSelector(state => state.user)
-    const dispatch = useDispatch()
-
-    const handleLogout = () => {
-        localStorage.removeItem('token')
-        dispatch(logoutSuccess())
-    }
+    const { handleLogout } = useLogin()
 
     return(
-        <div>
+        <UserStatusContainer name='user-status-container'>
             <p>Logged in as {name}</p>
             <a id='logout' onClick={handleLogout} href='/auth'>Logout</a>
-        </div>
+        </UserStatusContainer>
     )
 }
 

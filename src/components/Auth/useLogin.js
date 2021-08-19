@@ -1,12 +1,13 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { loginSuccess, updateAuthentication } from '../../Actions/auth'
-import API from './API'
-const API_URL = API()
+import { loginSuccess, updateAuthentication, logoutSuccess } from '../../Actions/auth'
+import useAPI from './API'
 
 const useLogin = () => {
 
     const dispatch = useDispatch()
+    const API_URL = useAPI()
+    
     const [error, setError] = useState('')
     const [values, setValues] = useState({
         email_address: '',
@@ -42,7 +43,12 @@ const useLogin = () => {
         })
     }
 
-    return { error, handleChange, handleSubmit }
+    const handleLogout = () => {
+        localStorage.removeItem('token')
+        dispatch(logoutSuccess())
+    }
+
+    return { error, handleChange, handleSubmit, handleLogout }
 }
 
 export default useLogin;

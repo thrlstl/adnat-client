@@ -1,15 +1,14 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { signupSuccess, updateAuthentication } from "../../Actions/auth";
-
+import useAPI from "./API";
 import validateSignup from "./validateSignup";
-import API from './API'
-const API_URL = API()
-
 
 const useSignup = () => {
     
     const dispatch = useDispatch()
+    const API_URL = useAPI()
+
     const [isSubmitting, setIsSubmitting] = useState(false)
     const [errors, setErrors] = useState({})
     const [values, setValues] = useState({
@@ -41,26 +40,25 @@ const useSignup = () => {
                 },
                 body: JSON.stringify(values)
             }
-                fetch(`${API_URL}users`, reqObj)
-                .then(resp => resp.json())
-                .then(({ user, token, error }) => {
-                    if (token) {
-                        localStorage.setItem('token', token)
-                        dispatch(signupSuccess(user))
-                        dispatch(updateAuthentication(true))
-                    } else if (error) {
-                        setErrors(error)
-                    }
-                })
+            fetch(`${API_URL}users`, reqObj)
+            .then(resp => resp.json())
+            .then(({ user, token, error }) => {
+                if (token) {
+                    localStorage.setItem('token', token)
+                    dispatch(signupSuccess(user))
+                    dispatch(updateAuthentication(true))
+                } else if (error) {
+                    setErrors(error)
+                }
+            })
         }
 
         if (Object.keys(errors).length === 0 && isSubmitting) {
             createUser();
-          }
+        }
+    })
 
-    }, [errors, isSubmitting, values, dispatch])
-
-    return { values, errors, handleChange, handleSubmit }
+    return { errors, handleChange, handleSubmit }
 }
 
 export default useSignup;
