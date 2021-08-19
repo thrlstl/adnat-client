@@ -19,3 +19,17 @@ export const loadAllOrgs = orgs => {
     }
 }
 
+export const loadSelectedOrg = org => {
+    return {
+        type: 'LOAD_SELECTED_ORG',
+        selectedOrg: org,
+    }
+}
+
+export const deleteOrg = id => {
+    return {
+        type: 'DELETE_ORG',
+        id: id,
+    }
+}
+

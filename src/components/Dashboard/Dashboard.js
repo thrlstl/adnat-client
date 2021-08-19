@@ -6,7 +6,7 @@ import Organizations from './Organizations.js'
 
 
 import API from '../Auth/API'
-import MyOrgs from './MyOrgs'
+import MyOrgs from './my-orgs/MyOrgs'
 const API_URL = API()
 
 function Dashboard() {
