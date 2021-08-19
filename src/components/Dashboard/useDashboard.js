@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux'
-import { deleteOrg, loadSelectedOrg } from '../../Actions/dashboard'
+import { loadDashboard, loadSelectedOrg } from '../../Actions/dashboard'
 
 import API from '../Auth/API'
 const API_URL = API()
@@ -22,14 +22,23 @@ const useDashboard = () => {
             body: JSON.stringify(formData)
         }
         fetch(`${API_URL}leave`, reqObj)
-        dispatch(deleteOrg(org.id))
+        fetchDashboardData()
     }
 
     const selectOrg = org => {
         dispatch(loadSelectedOrg(org))
     }
 
-    return { selectOrg, leaveOrg }
+    const fetchDashboardData = () => {
+        fetch(`${API_URL}users/${user.id}`)
+        .then(resp => resp.json())
+        .then(({ organizations, shifts, other_organizations }) => {
+            dispatch(loadDashboard(organizations, shifts, other_organizations))
+        })
+    }
+
+
+    return { selectOrg, leaveOrg, fetchDashboardData }
 }
 
 export default useDashboard;

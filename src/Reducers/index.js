@@ -3,15 +3,15 @@ import authReducer from "./auth";
 import userReducer from "./user";
 import myOrgsReducer from "./myOrgs";
 import myShiftsReducer from "./myShifts";
-import allOrgsReducer from "./allOrgs";
 import selectedOrgReducer from "./selectedOrg";
+import otherOrgsReducer from "./otherOrgs";
 
 const allReducers = combineReducers({
     isAuthenticated: authReducer,
     user: userReducer,
     myOrgs: myOrgsReducer,
+    otherOrgs: otherOrgsReducer,
     myShifts: myShiftsReducer,
-    allOrgs: allOrgsReducer,
     selectedOrg: selectedOrgReducer
 })
 

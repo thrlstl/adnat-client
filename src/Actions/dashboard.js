@@ -1,21 +1,9 @@
-export const loadMyOrgs = orgs => {
+export const loadDashboard = (myOrgs, myShifts, otherOrgs) => {
     return {
-        type: 'LOAD_MY_ORGS',
-        myOrgs: orgs,
-    }
-}
-
-export const loadMyShifts = shifts => {
-    return {
-        type: 'LOAD_MY_SHIFTS',
-        myShifts: shifts,
-    }
-}
-
-export const loadAllOrgs = orgs => {
-    return {
-        type: 'LOAD_ALL_ORGS',
-        allOrgs: orgs,
+        type: 'LOAD_DASHBOARD',
+        myOrgs: myOrgs,
+        otherOrgs: otherOrgs,
+        myShifts: myShifts,
     }
 }
 
@@ -25,11 +13,3 @@ export const loadSelectedOrg = org => {
         selectedOrg: org,
     }
 }
-
-export const deleteOrg = id => {
-    return {
-        type: 'DELETE_ORG',
-        id: id,
-    }
-}
-

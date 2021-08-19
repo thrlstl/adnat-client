@@ -1,6 +1,6 @@
 const myShiftsReducer = (state = [], action) => {
     switch (action.type) {
-        case 'LOAD_MY_SHIFTS':
+        case 'LOAD_DASHBOARD':
             return [...state, ...action.myShifts]
         default:
             return state

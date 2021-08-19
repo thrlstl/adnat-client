@@ -23,12 +23,12 @@ function OrgItem(org) {
     }
 
     return(
-        <>
+        <div className='org-container'>
         <h2 id='org-name'>{org.name}</h2>
             <a type='view-shifts' onClick={e => handleClick(e, e.target.type)} href='/dashboard' id='org-action'>View Shifts</a>
             <a type='edit' onClick={e => handleClick(e, e.target.type)} href='/dashboard' id='org-action'>Edit</a>
             <a type='leave' onClick={e => handleClick(e, e.target.type)} href='/dashboard' id='org-action'>Leave</a>
-        </>
+        </div>
     )
 }
 

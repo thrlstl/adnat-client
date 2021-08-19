@@ -3,6 +3,7 @@
   font-size: 20px;
   margin-left: 50px;
   margin-top: 50px;
+  margin-bottom: 50px;
   color: white;
 }
 
@@ -27,7 +28,7 @@
 }
 
 .form > input[type="submit"] {
-  padding: 5px 10px 5px 10px;
+  padding: 5px 10px;
   font-weight: bold;
 }
 
@@ -35,7 +36,7 @@
   font-style: italic;
   font-family: "Courier New", Courier, monospace;
   margin-top: 50px;
-  padding: 5px 10px 5px 10px;
+  padding: 5px 10px;
 }
 
 .error-message {
@@ -45,16 +46,33 @@
 
 a[id="logout"],
 a[id="org-action"] {
+  padding: 0px 10px;
+  text-decoration: none;
   color: black;
   font-weight: bold;
   font-style: italic;
+  margin-right: 20px;
   background-color: white;
 }
 
-a[id="org-action"] {
-  margin-right: 10px;
+a[id="org-action"]:hover,
+a[id="logout"]:hover {
+  background-color: #3895d3;
+  color: white;
+  border-bottom: 5px solid white;
 }
 
 h2[id="org-name"] {
-  margin-bottom: 0;
+  margin-bottom: 5px;
+}
+
+.my-orgs-container {
+  margin-top: 50px;
+  border-top: 5px solid #3895d3;
+  border-bottom: 5px solid #3895d3;
+}
+
+.org-container {
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
