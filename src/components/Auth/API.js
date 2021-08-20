@@ -1,6 +1,6 @@
 const useAPI = () => {
 
-    const env = 'production'
+    const env = 'development'
     const development = 'http://localhost:3000/'
     const production = 'https://adnat-api.herokuapp.com/'
 
