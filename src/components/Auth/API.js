@@ -5,7 +5,7 @@ const useAPI = () => {
     const production = 'https://adnat-api.herokuapp.com/'
 
     const checkEnvironment = () => {
-        return env === 'development'
+        return env === 'production'
         ? development
         : production
     }

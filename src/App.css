@@ -1,7 +1,8 @@
 .App {
   font-family: "Courier New", Courier, monospace;
+  width: 90vw;
   font-size: 20px;
-  margin-left: 50px;
+  margin-left: 5vw;
   margin-top: 50px;
   margin-bottom: 50px;
   color: white;
@@ -75,4 +76,29 @@ h2[id="org-name"] {
 .org-container {
   margin-top: 50px;
   margin-bottom: 50px;
+}
+
+.category-cell,
+.shift-cell {
+  padding: 10px;
+}
+
+.category-cell {
+  font-weight: bolder;
+  background-color: #3895d3;
+}
+
+.shift-row {
+  background-color: #3895d3;
+  font-size: 15px;
+}
+
+.shift-row.user-shift {
+  font-weight: bold;
+  color: black;
+  background-color: white;
+}
+
+.shifts-table-container {
+  color: #3895d3;
 }

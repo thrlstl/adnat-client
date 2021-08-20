@@ -1,10 +1,12 @@
 import { useDispatch, useSelector } from 'react-redux'
+import { useHistory } from 'react-router-dom'
 import { loadDashboard, loadSelectedOrg } from '../../Actions/dashboard'
 import useAPI from '../Auth/API'
 
 const useDashboard = () => {
     
     const dispatch = useDispatch()
+    const history = useHistory()
     const API_URL = useAPI()
     const user = useSelector(state => state.user)
     
@@ -49,6 +51,14 @@ const useDashboard = () => {
         dispatch(loadSelectedOrg(org))
     }
 
+    const viewShifts = () => {
+        history.push('/dashboard/shifts')
+    }
+
+    const editOrg = () => {
+        history.push('/dashboard/edit')
+    }
+
     const fetchDashboardData = () => {
         fetch(`${API_URL}users/${user.id}`)
         .then(resp => resp.json())
@@ -58,7 +68,14 @@ const useDashboard = () => {
     }
 
 
-    return { selectOrg, leaveOrg, joinOrg, fetchDashboardData }
+    return { 
+        selectOrg, 
+        leaveOrg, 
+        joinOrg, 
+        editOrg, 
+        viewShifts, 
+        fetchDashboardData 
+    }
 }
 
 export default useDashboard;

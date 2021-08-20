@@ -3,15 +3,17 @@ import Container from '../../Container'
 
 function OrgItem(org) {
 
-    const { leaveOrg, selectOrg } = useDashboard()
+    const { leaveOrg, selectOrg, editOrg, viewShifts } = useDashboard()
 
     const handleClick = (e, type) => {
         e.preventDefault()
         selectOrg(org)
         switch(type) {
             case 'view-shifts':
+                viewShifts()
                 break
             case 'edit':
+                editOrg()
                 break
             case 'leave':
                 leaveOrg(org)
