@@ -2,7 +2,7 @@ function ShiftsTable(props) {
     const { children, name } = props
     return(
         <table className={name}>
-            <tbody>
+            <tbody className={name}>
                 {children}
             </tbody>
         </table>

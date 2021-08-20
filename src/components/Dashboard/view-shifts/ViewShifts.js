@@ -5,6 +5,7 @@ import ShiftColumns from "./Table/ShiftColumns";
 import ShiftRows from "./Table/ShiftRows";
 import { useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
+import CloseButton from "../CloseButton";
 
 function ViewShifts() {
 
@@ -21,6 +22,7 @@ function ViewShifts() {
                     <ShiftColumns />
                     <ShiftRows shifts={shifts} />
                 </ShiftsTable>
+            <CloseButton />
         </Container>
         : <Redirect to='/dashboard' />
     )

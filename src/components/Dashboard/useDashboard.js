@@ -28,6 +28,7 @@ const useDashboard = () => {
             body: JSON.stringify(formData)
         }
         fetch(`${API_URL}leave`, reqObj)
+        // Need to add a response here for better UI experience on mobile
         if (org.id === selectedOrg.id) {
             dispatch(deselectOrg())
         }
