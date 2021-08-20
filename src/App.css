@@ -21,12 +21,18 @@
 }
 
 .form > input {
+  border: solid 2px white;
+  background-color: rgba(255, 255, 255, 0.8);
   font-family: "Courier New", Courier, monospace;
   font-size: 25px;
   font-weight: bold;
   display: list-item;
   padding: 10px;
   margin-top: 20px;
+}
+
+.form > input:focus {
+  outline: solid 4px #3895d3;
 }
 
 .form > input[type="submit"] {
@@ -88,6 +94,7 @@ h2[id="org-name"] {
 
 .category-cell,
 .shift-cell {
+  text-align: center;
   padding: 10px;
 }
 
@@ -97,18 +104,19 @@ h2[id="org-name"] {
 }
 
 .shift-row {
-  background-color: #3895d3;
-  font-size: 15px;
-}
-
-.shift-row.user-shift {
-  font-weight: bold;
   color: black;
+  font-size: 15px;
   background-color: rgba(255, 255, 255, 0.9);
 }
 
-.shift-row.user-shift > .shift-cell {
-  border-bottom: solid 5px rgba(70, 130, 170, 1);
+.shift-row.user-shift {
+  color: white;
+  font-weight: bold;
+  background-color: #3895d3;
+}
+
+.shift-row.user-shift > .shift-cell:first-child {
+  border-left: solid 5px tomato;
 }
 
 .shifts-table-container {
@@ -121,4 +129,8 @@ h2[id="org-name"] {
   min-width: min-content;
   padding: 5px 10px;
   border: solid 2px white;
+}
+
+.form.edit-org > input:nth-child(2) {
+  margin-bottom: 30px;
 }
