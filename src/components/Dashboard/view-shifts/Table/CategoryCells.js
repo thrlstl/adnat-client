@@ -7,7 +7,7 @@ function CategoryCells() {
         'Shift Date',
         'Start Time',
         'Finish Time',
-        'Break Length (Minutes)',
+        'Break Length',
         'Hours Worked',
         'Shift Cost'
     ]

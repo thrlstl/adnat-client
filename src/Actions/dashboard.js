@@ -13,3 +13,10 @@ export const loadSelectedOrg = org => {
         selectedOrg: org,
     }
 }
+
+export const deselectOrg = () => {
+    return {
+      type: 'DESELECT_ORG',
+      selectedOrg: {}
+    }
+  }

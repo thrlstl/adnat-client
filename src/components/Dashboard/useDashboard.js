@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
-import { loadDashboard, loadSelectedOrg } from '../../Actions/dashboard'
+import { deselectOrg, loadDashboard, loadSelectedOrg } from '../../Actions/dashboard'
 import useAPI from '../Auth/API'
 
 const useDashboard = () => {
@@ -9,6 +9,11 @@ const useDashboard = () => {
     const history = useHistory()
     const API_URL = useAPI()
     const user = useSelector(state => state.user)
+    const selectedOrg = useSelector(state => state.selectedOrg)
+
+    const selectOrg = org => {
+        dispatch(loadSelectedOrg(org))
+    }
     
     const leaveOrg = org => {
         const formData = {
@@ -23,6 +28,9 @@ const useDashboard = () => {
             body: JSON.stringify(formData)
         }
         fetch(`${API_URL}leave`, reqObj)
+        if (org.id === selectedOrg.id) {
+            dispatch(deselectOrg())
+        }
         fetchDashboardData()
     }
 
@@ -47,15 +55,13 @@ const useDashboard = () => {
         })
     }
 
-    const selectOrg = org => {
-        dispatch(loadSelectedOrg(org))
-    }
-
-    const viewShifts = () => {
+    const viewShifts = org => {
+        selectOrg(org)
         history.push('/dashboard/shifts')
     }
 
-    const editOrg = () => {
+    const editOrg = org => {
+        selectOrg(org)
         history.push('/dashboard/edit')
     }
 
@@ -66,7 +72,6 @@ const useDashboard = () => {
             dispatch(loadDashboard(organizations, shifts, other_organizations))
         })
     }
-
 
     return { 
         selectOrg, 

@@ -7,9 +7,9 @@ function ShiftCells({shift}) {
         shift.shift_date,
         shift.shift_start,
         shift.shift_finish,
-        shift.break_length,
+        `${shift.break_length} minutes`,
         shift.hours_worked,
-        shift.shift_cost
+        `$${shift.shift_cost}`
     ]
 
     return(
