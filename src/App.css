@@ -1,10 +1,9 @@
 .App {
   font-family: "Courier New", Courier, monospace;
-  width: 90vw;
+  max-width: 90vw;
   font-size: 20px;
   margin-left: 5vw;
   margin-top: 50px;
-  margin-bottom: 50px;
   color: white;
 }
 
@@ -86,8 +85,8 @@ h2[id="org-name"] {
 
 .my-orgs-container {
   margin-top: 50px;
-  border-top: 5px solid #3895d3;
-  border-bottom: 5px solid #3895d3;
+  border-top: 2px solid #3895d3;
+  border-bottom: 2px solid #3895d3;
 }
 
 .org-container {
