@@ -1,5 +1,4 @@
-function TableCell(props) {
-    const { name, data } = props
+function TableCell({name, data}) {
     return(
         <td className={name}>{data}</td>
     )

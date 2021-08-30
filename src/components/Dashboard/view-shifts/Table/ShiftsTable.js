@@ -1,5 +1,4 @@
-function ShiftsTable(props) {
-    const { children, name } = props
+function ShiftsTable({children, name}) {
     return(
         <table className={name}>
             <tbody className={name}>

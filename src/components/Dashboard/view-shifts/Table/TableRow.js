@@ -1,5 +1,4 @@
-function TableRow(props) {
-    const { children, name } = props
+function TableRow({children, name}) {
     return(
         <tr className={name}>
             {children}

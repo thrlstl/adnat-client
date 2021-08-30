@@ -78,7 +78,10 @@ a[id="org-action close"]:hover {
 }
 
 h2[id="org-name"] {
-  margin-bottom: 5px;
+  transform: translate(5px, -5px);
+  background-color: #3895d3;
+  max-width: max-content;
+  padding: 5px 10px;
 }
 
 .my-orgs-container {
@@ -123,12 +126,21 @@ h2[id="org-name"] {
   color: #3895d3;
 }
 
+.org-name-container,
+.shift-header-container,
+.edit-org-header-container {
+  background-color: white;
+  max-width: max-content;
+}
+
 .shifts-header,
 .edit-org-header {
+  margin-top: 50px;
+  transform: translate(5px, -5px);
+  background-color: #3895d3;
   max-width: max-content;
   min-width: min-content;
   padding: 5px 10px;
-  border: solid 2px white;
 }
 
 .form.edit-org > input:nth-child(2) {

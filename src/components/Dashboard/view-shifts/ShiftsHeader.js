@@ -1,6 +1,10 @@
+import Container from "../../Container";
+
 function ShiftsHeader({selectedOrg}){
     return(
-        <h3 className='shifts-header'>Shifts —— {selectedOrg}</h3>
+        <Container name='shift-header-container'>
+            <h3 className='shifts-header'>Shifts —— {selectedOrg}</h3>
+        </Container>
     )
 }
 

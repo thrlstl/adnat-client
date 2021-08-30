@@ -1,4 +1,4 @@
-import TableCell from "./TableCells";
+import TableCell from "./TableCell";
 
 function ShiftCells({shift}) {
 

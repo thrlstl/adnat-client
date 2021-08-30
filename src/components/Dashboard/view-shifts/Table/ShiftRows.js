@@ -1,9 +1,9 @@
 import ShiftRow from "./ShiftRow";
 
-function ShiftRows(props) {
-    const { shifts } = props
+function ShiftRows({shifts}) {
     return(
-        shifts.map(shift => <ShiftRow key={shift.id} shift={shift} />)
+        shifts.map(shift => 
+        <ShiftRow key={shift.id} shift={shift} /> )
     )
 }
 
