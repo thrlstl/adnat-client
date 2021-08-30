@@ -1,9 +1,12 @@
 .App {
   font-family: "Courier New", Courier, monospace;
-  max-width: 90vw;
+  position: fixed;
+  width: 90vw;
+  height: 90vh;
   font-size: 20px;
   margin-left: 5vw;
-  margin-top: 50px;
+  margin-top: 5vh;
+  overflow-y: scroll;
   color: white;
 }
 
