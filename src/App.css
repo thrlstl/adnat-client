@@ -74,6 +74,9 @@
   width: max-content;
   margin-left: auto;
   margin-right: auto;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 .form > input {
@@ -100,6 +103,9 @@
   background-color: white;
   padding: 0px 10px;
   font-weight: bold;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 .form > input[type="submit"]:hover {
