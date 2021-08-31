@@ -1,12 +1,13 @@
 import useSignup from './useSignup';
 import ErrorMessage from './ErrorMessage';
+import Container from '../Container';
 
 function Signup({ toggle, setToggle }) {
 
     const { errors, handleChange, handleSubmit } = useSignup()
 
     return (
-        <div className='form-container'>
+        <div className='form-container auth'>
             <form className='form' onSubmit={handleSubmit}>
                     
                     { errors.length && <ErrorMessage error={errors} /> }
@@ -45,7 +46,9 @@ function Signup({ toggle, setToggle }) {
                     type="submit" 
                     value="Signup"/>
             </form>
-            <button className='auth-toggle' onClick={() => setToggle(!toggle)}>Login</button>
+                <Container name='auth-toggle-container'>
+                    <button className='auth-toggle' onClick={() => setToggle(!toggle)}>Login</button>
+                </Container>
         </div>
     )
 }

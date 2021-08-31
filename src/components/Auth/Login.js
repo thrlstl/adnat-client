@@ -7,7 +7,7 @@ function Login({ toggle, setToggle }) {
     const { error, handleChange, handleSubmit } = useLogin()
 
     return (
-        <Container name='form-container'>
+        <Container name='form-container auth'>
             { error.length > 0 && <ErrorMessage error={error} /> }
             <form className='form' onSubmit={handleSubmit}>
                 <input
@@ -25,7 +25,9 @@ function Login({ toggle, setToggle }) {
                     type='submit'
                     value='Login' />
             </form>
-            <button className='auth-toggle' onClick={() => setToggle(!toggle)}>Signup</button>
+            <Container name='auth-toggle-container'>
+                <button className='auth-toggle' onClick={() => setToggle(!toggle)}>Signup</button>
+            </Container>
         </Container>
     )
 }

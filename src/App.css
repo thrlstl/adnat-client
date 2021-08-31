@@ -1,16 +1,39 @@
 .App {
   font-family: "Courier New", Courier, monospace;
-  width: 90vw;
+  width: 100vw;
   font-size: 20px;
-  margin-left: 5vw;
-  margin-top: 5vh;
   color: white;
+}
+
+.header-container {
+  display: flex;
+  top: 0;
+  height: 50px;
+  z-index: 1;
+  position: fixed;
+  background-color: #2c2d31;
+  width: 100vw;
+  box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.45);
 }
 
 .header {
   color: #3895d3;
-  font-size: 45px;
+  text-decoration: none;
+  font-size: 35px;
   font-weight: bold;
+  width: max-content;
+  height: max-content;
+  margin: auto;
+}
+
+.header:hover {
+  color: white;
+}
+
+.dashboard-container {
+  margin-top: 75px;
+  margin-left: 5vw;
+  width: 90vw;
 }
 
 .form-container {
@@ -19,8 +42,22 @@
   width: 100vw;
 }
 
+.auth {
+  width: max-content;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25vh;
+}
+
+.auth > .form > input[type="submit"] {
+  width: max-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .form > input {
   border: solid 2px white;
+  border-radius: 4px;
   background-color: rgba(255, 255, 255, 0.8);
   font-family: "Courier New", Courier, monospace;
   font-size: 25px;
@@ -35,15 +72,46 @@
 }
 
 .form > input[type="submit"] {
-  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: white;
+  padding: 0px 10px;
   font-weight: bold;
 }
 
-.auth-toggle {
-  font-style: italic;
-  font-family: "Courier New", Courier, monospace;
+.form > input[type="submit"]:hover {
+  background-color: #3895d3;
+  color: white;
+  border-bottom: 5px solid white;
+}
+
+.auth-toggle-container {
   margin-top: 50px;
-  padding: 5px 10px;
+  width: max-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.auth-toggle {
+  border: none;
+  border-radius: 4px;
+  background-color: white;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: bold;
+  padding: 0px 10px;
+}
+
+.auth-toggle:hover {
+  background-color: #3895d3;
+  color: white;
+  border-bottom: 5px solid white;
+}
+
+.auth-toggle:focus {
+  outline: none;
+  border: solid 4px white;
 }
 
 .error-message {
@@ -54,6 +122,7 @@
 a[id="logout"],
 a[id="org-action"],
 a[id="org-action close"] {
+  border-radius: 4px;
   padding: 0px 10px;
   text-decoration: none;
   color: black;
@@ -106,7 +175,7 @@ h2[id="org-name"] {
 
 .category-cell {
   font-weight: bolder;
-  background-color: rgba(56, 149, 211, 0.5);
+  background-color: #46484e;
 }
 
 .shift-row {
