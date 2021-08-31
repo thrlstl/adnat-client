@@ -11,7 +11,7 @@ function EditForm() {
     ])
 
     return(
-        <Container name='form-container'>
+        <Container name='form-container edit'>
             <form className='form edit-org'>
                 <label className='edit-label'>Name: {name}</label>
                     <input

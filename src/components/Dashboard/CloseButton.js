@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux"
 import { deselectOrg } from "../../Actions/dashboard"
+import Container from "../Container"
 
 function CloseButton() {
 
@@ -11,7 +12,9 @@ function CloseButton() {
     }
 
     return(
-        <a onClick={e => handleClick(e, e.target.type)} href='/dashboard' id='org-action close'>Close</a>
+        <Container name='close-button-container'>
+            <a onClick={e => handleClick(e, e.target.type)} href='/dashboard' id='org-action close'>Close</a>
+        </Container>
     )
 }
 
