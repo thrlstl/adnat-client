@@ -1,12 +1,9 @@
 .App {
   font-family: "Courier New", Courier, monospace;
-  position: fixed;
   width: 90vw;
-  height: 90vh;
   font-size: 20px;
   margin-left: 5vw;
   margin-top: 5vh;
-  overflow-y: scroll;
   color: white;
 }
 
@@ -74,11 +71,6 @@ a[id="org-action close"]:hover {
   border-bottom: 5px solid white;
 }
 
-.shift-table-container {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
 h2[id="org-name"] {
   transform: translate(5px, -5px);
   background-color: #3895d3;
@@ -95,6 +87,15 @@ h2[id="org-name"] {
 .org-container {
   margin-top: 50px;
   margin-bottom: 50px;
+}
+
+.shifts-table-container {
+  overflow-x: auto;
+}
+
+.shifts-table {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .category-cell,
@@ -122,10 +123,6 @@ h2[id="org-name"] {
 
 .shift-row.user-shift > .shift-cell:first-child {
   border-left: solid 5px tomato;
-}
-
-.shifts-table-container {
-  color: #3895d3;
 }
 
 .org-name-container,

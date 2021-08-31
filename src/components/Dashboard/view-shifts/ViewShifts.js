@@ -18,10 +18,12 @@ function ViewShifts() {
         selectedOrg.id ?
         <Container name='view-shifts-container'>
             <ShiftsHeader selectedOrg={selectedOrg.name} />
-                <ShiftsTable name='shift-table-container'>
-                    <ShiftColumns />
-                    <ShiftRows shifts={shifts} />
-                </ShiftsTable>
+                <Container name='shifts-table-container'>
+                    <ShiftsTable name='shifts-table'>
+                        <ShiftColumns />
+                        <ShiftRows shifts={shifts} />
+                    </ShiftsTable>
+                </Container>
             <CloseButton />
         </Container>
         : <Redirect to='/dashboard' />

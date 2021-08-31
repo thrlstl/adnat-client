@@ -3,13 +3,13 @@ import Container from "../../Container"
 
 function OrgItem(org) {
 
-    const { selectOrg, joinOrg } = useDashboard()
+    const { joinOrg, editOrg } = useDashboard()
 
     const handleClick = (e, type) => {
-        selectOrg(org)
         e.preventDefault()
         switch(type) {
             case 'edit':
+                editOrg(org)
                 break
             case 'join':
                 joinOrg(org)
