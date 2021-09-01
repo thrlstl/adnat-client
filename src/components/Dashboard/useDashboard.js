@@ -59,11 +59,13 @@ const useDashboard = () => {
     const viewShifts = org => {
         selectOrg(org)
         history.push('/dashboard/shifts')
+        window.scrollTo(0, 0)
     }
 
     const editOrg = org => {
         selectOrg(org)
         history.push('/dashboard/edit')
+        window.scrollTo(0, 0)
     }
 
     const fetchDashboardData = () => {

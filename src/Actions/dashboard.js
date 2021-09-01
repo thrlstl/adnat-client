@@ -19,4 +19,4 @@ export const deselectOrg = () => {
       type: 'DESELECT_ORG',
       selectedOrg: {}
     }
-  }
+}

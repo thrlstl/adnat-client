@@ -8,10 +8,9 @@
 
 .header-container {
   display: flex;
-  top: 0;
+  position: fixed;
   height: 50px;
   z-index: 1;
-  position: fixed;
   background-color: #2c2d31;
   width: 100vw;
   box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.45);
@@ -62,7 +61,8 @@
   margin-top: 25vh;
 }
 
-.edit {
+.edit,
+.add-shift {
   text-align: center;
   max-width: min-content;
   margin-left: auto;
@@ -70,7 +70,8 @@
 }
 
 .auth > .form > input[type="submit"],
-.edit > .form > input[type="submit"] {
+.edit > .form > input[type="submit"],
+.add-shift > .form > input[type="submit"] {
   width: max-content;
   margin-left: auto;
   margin-right: auto;
@@ -195,11 +196,13 @@ h2[id="org-name"] {
   margin-right: auto;
   margin-top: 50px;
   margin-bottom: 50px;
+  box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.45);
 }
 
 .org-container:hover,
 .org-container:active {
-  box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.45);
+  transform: scale(1.01);
+  /* box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.45); */
 }
 
 @media (min-width: 651px) {
@@ -280,7 +283,8 @@ h2[id="org-name"] {
 
 .org-name-container,
 .shift-header-container,
-.edit-org-header-container {
+.edit-org-header-container,
+.add-shift-header-container {
   margin-left: auto;
   margin-right: auto;
   background-color: white;
@@ -288,7 +292,8 @@ h2[id="org-name"] {
 }
 
 .shifts-header,
-.edit-org-header {
+.edit-org-header,
+.add-shift-header {
   margin-top: 50px;
   transform: translate(5px, -5px);
   background-color: #3895d3;
@@ -298,5 +303,9 @@ h2[id="org-name"] {
 }
 
 .form.edit-org > input:nth-child(2) {
+  margin-bottom: 30px;
+}
+
+.add-shift > input {
   margin-bottom: 30px;
 }
