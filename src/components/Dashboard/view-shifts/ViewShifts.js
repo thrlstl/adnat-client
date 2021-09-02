@@ -2,12 +2,11 @@ import { useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import Container from "../../Container";
 import ShiftsHeader from "./ShiftsHeader";
-import ShiftsTable from "./Table/ShiftsTable";
-import ShiftColumns from "./Table/ShiftColumns";
-import ShiftRows from "./Table/ShiftRows";
 import CloseButton from "../CloseButton";
 import AddShift from "./AddShift";
 import AddShiftHeader from "./AddShiftHeader";
+import ShiftsTable from "./Table/ShiftsTable";
+import NoShiftsMessage from "./Table/NoShiftsMessage";
 
 function ViewShifts() {
 
@@ -20,12 +19,7 @@ function ViewShifts() {
         selectedOrg.id ?
         <Container name='view-shifts-container'>
             <ShiftsHeader selectedOrg={selectedOrg.name} />
-                <Container name='shifts-table-container'>
-                    <ShiftsTable name='shifts-table'>
-                        <ShiftColumns />
-                        <ShiftRows shifts={shifts} />
-                    </ShiftsTable>
-                </Container>
+                { shifts.length ? <ShiftsTable /> : <NoShiftsMessage />}
                 <AddShiftHeader />
                     <AddShift />
             <CloseButton />

@@ -7,6 +7,7 @@ import OtherOrganizations from './other-orgs/OtherOrganizations'
 import Container from '../Container'
 import ViewShifts from './view-shifts/ViewShifts'
 import EditOrg from './edit-org/EditOrg'
+import CreateOrg from './create-org/CreateOrg'
 
 function Dashboard() {
 
@@ -22,6 +23,7 @@ function Dashboard() {
                 </Switch>
             <MyOrgs />
             <OtherOrganizations />
+            <CreateOrg />
         </Container>
 
     )

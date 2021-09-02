@@ -66,6 +66,7 @@ const useDashboard = () => {
             ? fetchDashboardData()
             : window.alert(error)
         })
+        window.scrollTo(0, 0)
     }
 
     const viewShifts = org => {

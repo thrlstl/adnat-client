@@ -6,9 +6,6 @@ function AddShift() {
 
     const { handleChange, handleSubmit, errors } = useAddShift()
 
-
-
-
     return(
         <Container name='form-container add-shift'>
             <form className='form add-shift'>
