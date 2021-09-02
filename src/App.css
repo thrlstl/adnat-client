@@ -215,13 +215,15 @@ h2[id="org-name"] {
   .org-name-container,
   .shift-header-container,
   .edit-org-header-container {
-    width: 90%;
+    text-align: center;
+    /* width: 90%; */
   }
 }
 
 .org-contents-container {
   position: relative;
   height: max-content;
+  max-width: 90%;
 }
 
 .org-actions-container {

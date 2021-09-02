@@ -14,6 +14,14 @@ const useDashboard = () => {
     const selectOrg = org => {
         dispatch(loadSelectedOrg(org))
     }
+
+    const reloadOrg = () => {
+        fetch(`${API_URL}organizations/${selectedOrg.id}`)
+        .then(resp => resp.json())
+        .then(org => {
+            selectOrg(org)
+        })
+    }
     
     const leaveOrg = org => {
         const formData = {
@@ -77,7 +85,8 @@ const useDashboard = () => {
     }
 
     return { 
-        selectOrg, 
+        selectOrg,
+        reloadOrg, 
         leaveOrg, 
         joinOrg, 
         editOrg, 

@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
+import useDashboard from "../useDashboard";
 import useAPI from "../../Auth/API";
 
 const useAddShift = () => {
 
+    const { reloadOrg } = useDashboard()
     const API_URL = useAPI()
     const [orgID, userID] = useSelector((state) => [
         state.selectedOrg.id,
@@ -11,25 +13,18 @@ const useAddShift = () => {
     ])
 
     const [values, setValues] = useState({})
+    const [errors, setErrors] = useState({})
 
     useEffect(() => {
         setValues({
-            start: '',
-            finish: '',
+            start: null,
+            finish: null,
             break_length: null,
             user_id: userID,
             organization_id: orgID
         })
     }, [orgID, userID])
 
-
-    // const reloadOrg = () => {
-    //     fetch(`${API_URL}/organizations/${orgID}`)
-    //     .then(resp => resp.json())
-    //     .then(org => {
-    //         debugger
-    //     })
-    // }
 
     const handleChange = e => {
         const { name, value } = e.target
@@ -41,7 +36,7 @@ const useAddShift = () => {
 
     const handleSubmit = e => {
         e.preventDefault()
-        // const form = e.target.parentElement
+        const form = e.target.parentElement
         const reqObj = {
             method: 'POST',
             headers: {
@@ -51,12 +46,19 @@ const useAddShift = () => {
         }
         fetch(`${API_URL}shifts`, reqObj)
         .then(resp => resp.json())
-        .then(result => {
-            debugger
+        .then(({shift, errors}) => {
+            if (errors) {
+                setErrors(errors)
+            } else {
+                reloadOrg()
+                form.reset()
+                setErrors({})
+                setValues({})
+            }
         })
     }
 
-    return { handleChange, handleSubmit }
+    return { handleChange, handleSubmit, errors }
 }
 
 export default useAddShift;
