@@ -1,15 +1,20 @@
+import { useSelector } from "react-redux";
+import { useEffect, useState } from "react";
 import TableRow from "./TableRow";
 import ShiftCells from "./ShiftCells";
-import { useSelector } from "react-redux";
 
 function ShiftRow({shift}) {
     
     const userID = useSelector(state => state.user.id)
-    let isUserShift = ''
+    const [isUserShift, setIsUserShift] = useState('')
 
-    if (shift.user.id === userID) {
-        isUserShift = 'user-shift'
-    }
+    useEffect(() => {
+        setIsUserShift(() => {
+            return shift.user.id === userID
+            ? 'user-shift'
+            : ''
+        })
+    }, [shift.user.id, userID])
 
     return(
         <TableRow name={`shift-row ${isUserShift}`}>

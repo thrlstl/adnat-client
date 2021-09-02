@@ -13,8 +13,8 @@ function ShiftCells({shift}) {
     ]
 
     return(
-        shiftCells.map(data => 
-        <TableCell key={data} data={data} name='shift-cell' />)
+        shiftCells.map((data, index) => 
+        <TableCell key={index} data={data} name='shift-cell' /> )
     )
 }
 

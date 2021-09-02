@@ -7,7 +7,6 @@ function Header() {
         <Container name='edit-org-header-container'>
             <h3 className='edit-org-header'>Edit —— {name}</h3>
         </Container>
-
     )
 }
 

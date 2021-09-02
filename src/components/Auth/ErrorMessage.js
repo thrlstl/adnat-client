@@ -1,5 +1,4 @@
-function ErrorMessage(props) {
-    const error = props.error
+function ErrorMessage({error}) {
     return(
         <p className='error-message'>{error}</p>
     )

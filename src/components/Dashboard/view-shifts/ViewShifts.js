@@ -1,10 +1,10 @@
+import { useSelector } from "react-redux";
+import { Redirect } from "react-router-dom";
 import Container from "../../Container";
 import ShiftsHeader from "./ShiftsHeader";
 import ShiftsTable from "./Table/ShiftsTable";
 import ShiftColumns from "./Table/ShiftColumns";
 import ShiftRows from "./Table/ShiftRows";
-import { useSelector } from "react-redux";
-import { Redirect } from "react-router-dom";
 import CloseButton from "../CloseButton";
 import AddShift from "./AddShift";
 import AddShiftHeader from "./AddShiftHeader";

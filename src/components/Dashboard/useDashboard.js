@@ -36,11 +36,15 @@ const useDashboard = () => {
             body: JSON.stringify(formData)
         }
         fetch(`${API_URL}leave`, reqObj)
-        // Need to add a response here for better UI experience on mobile
-        if (org.id === selectedOrg.id) {
-            dispatch(deselectOrg())
-        }
-        fetchDashboardData()
+        .then(resp => resp.json())
+        .then(({success, error}) => {
+            success
+            ? fetchDashboardData()
+            : window.alert(error)
+            if (org.id === selectedOrg.id) {
+                dispatch(deselectOrg())
+            }
+        })
     }
 
     const joinOrg = org => {
@@ -60,7 +64,7 @@ const useDashboard = () => {
         .then(({success, error}) => {
             success
             ? fetchDashboardData()
-            : console.log(error)
+            : window.alert(error)
         })
     }
 

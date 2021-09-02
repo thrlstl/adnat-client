@@ -13,7 +13,7 @@ function CloseButton() {
 
     return(
         <Container name='close-button-container'>
-            <a onClick={e => handleClick(e, e.target.type)} href='/dashboard' id='org-action close'>Close</a>
+            <a onClick={handleClick} href='/dashboard' id='org-action close'>Close</a>
         </Container>
     )
 }

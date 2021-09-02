@@ -1,8 +1,7 @@
-function Container(props) {
-    const className = props.name
+function Container({name, children}) {
     return(
-        <div className={className}>
-            {props.children}
+        <div className={name}>
+            {children}
         </div>
     )
 }

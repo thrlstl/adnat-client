@@ -19,7 +19,6 @@ export const logoutSuccess = () => {
   }
 }
 
-
 export const updateAuthentication = isAuthenticated => {
   return {
     type: 'UPDATE_AUTHENTICATION',

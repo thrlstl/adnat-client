@@ -13,8 +13,8 @@ function CategoryCells() {
     ]
 
     return(
-        shiftCategories.map(category => 
-        <TableCell key={category} data={category} name='category-cell' />)
+        shiftCategories.map((category, index) => 
+        <TableCell key={index} data={category} name='category-cell' /> )
     )
 }
 

@@ -1,11 +1,11 @@
 import { useEffect } from 'react'
+import { Route, Switch } from 'react-router-dom'
 import useDashboard from './useDashboard'
 import UserStatus from './UserStatus'
 import MyOrgs from './my-orgs/MyOrgs'
 import OtherOrganizations from './other-orgs/OtherOrganizations'
 import Container from '../Container'
 import ViewShifts from './view-shifts/ViewShifts'
-import { Route, Switch } from 'react-router-dom'
 import EditOrg from './edit-org/EditOrg'
 
 function Dashboard() {
