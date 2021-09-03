@@ -8,8 +8,8 @@
 
 - CLIENT — https://adnat-client.netlify.app/
 - API — https://adnat-api.herokuapp.com/users (for demo purposes)
-- LOGIN - <div style="display: inline">demo_user@adnat.com</div>
-- PASSWORD - adnatdemo
+- DEMO LOGIN - demo_user@adnat.com
+- DEMO PASSWORD - adnatdemo
 - Frontend Code - https://github.com/thrlstl/adnat-client
 - Backend Code - https://github.com/thrlstl/adnat-api
 
