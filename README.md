@@ -4,7 +4,7 @@
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/thrlstl/adnat-client)
 
-### Demo Details
+## Demo Details
 
 - CLIENT — https://adnat-client.netlify.app/
 - API — https://adnat-api.herokuapp.com/users (for demo purposes)
@@ -13,7 +13,7 @@
 - Frontend Code - https://github.com/thrlstl/adnat-client
 - Backend Code - https://github.com/thrlstl/adnat-api
 
-### Features
+## Features
 
 |                                              Auth w/ Validations                                               |
 | :------------------------------------------------------------------------------------------------------------: |
