@@ -13,6 +13,8 @@
 - Frontend Code - https://github.com/thrlstl/adnat-client
 - Backend Code - https://github.com/thrlstl/adnat-api
 
+### Features
+
 |                                              Auth w/ Validations                                               |
 | :------------------------------------------------------------------------------------------------------------: |
 | ![auth](https://user-images.githubusercontent.com/68616411/131931229-1a3af113-f2a9-4f73-917e-b8529080f3f5.png) |
